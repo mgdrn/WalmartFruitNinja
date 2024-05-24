@@ -1,2 +1,2 @@
-# WalmartFruitNinja
-/!\
+# FruitNinjaClone
+For school

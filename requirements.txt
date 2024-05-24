@@ -1,0 +1,14 @@
+flask - pip installl flask
+sqlite3 - pip install sqlitedict
+
+TODO:
+ - SFX
+
+MAYBE:
+ - Caching leaderboard scores
+ - Controls showing buttons
+
+DONE:
+ - bombs
+ - Explosion effects
+ - Particle effects when slashing fruit (maybe modify the trail)

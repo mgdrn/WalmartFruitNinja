@@ -1,0 +1,302 @@
+/*Set color schemes*/
+:root{
+    --Primary: #333;
+    --Secondary: #ca7c4f;
+    --Tertiary: #5a462f;
+    --Highlight: #333;
+    --TextPrimary: #000000;
+}
+body{
+    /*These are our primary fonts*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--Tertiary);
+    transition-duration: 300ms;
+    overflow-x: hidden;
+}
+/*Using this so I can set opacity better and do a few other things*/
+.backgroundimg{
+    z-index: -1;
+    opacity: 50%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background-image: url("/static/Assets/woodgrain.png");
+    background-repeat: repeat;
+}
+.centerDiv{
+    margin: auto;
+    width: 80%;
+}
+.titlecard{
+    /*This looks very video game-y, if we cant' download the font for some reason, fall back to impact/arial*/
+    font-family:'Jersey 10', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+    font-size: 5em;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 0.2em;
+    color: var(--TextPrimary);
+}
+.maindiv{
+    width: 100%;
+    border-radius: 6px;
+    height: 40em;
+    margin: auto;
+    text-align: center;
+    background-image: url("/static/Assets/BoardTexture.png");
+}
+#whiteout{
+    background-image: none;
+    background: #fff;
+    display: block;
+    position: fixed;
+    width: 80%;
+    z-index: 999999;
+    transition: all 1s;
+    opacity: 0%;
+    display: none;
+}
+
+
+.btn{
+    display: block;
+    background-color: var(--Secondary);
+    width: 10em;
+    height: 3em;
+    border-radius: 6px;
+    margin: auto;
+    margin-bottom: 0.5em;
+    cursor: pointer; /*This helps it look like a clickable button to the user*/
+}
+
+.btn p{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.explanationItem{
+    padding-top: 10px;
+    z-index: 3;
+    position: sticky;
+}
+
+#startBtns{
+    padding-top: 10em;
+}
+
+#diffSlider{
+    width: 20em;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #86e786, #a3e17d, #b9dc78, #ccd678, #dad07c, #e1c578, #e6ba77, #e9b079, #e89d75, #e48b75, #dc7a78, #d16b7d);
+    border-radius: 12px;
+}
+
+#cuttingboard{
+    overflow: hidden;
+    position:sticky;
+}
+#gameplay{
+    padding-top: 0px;
+    z-index: 7;
+}
+.gameplayHeader{
+    display: block;
+    margin-top: 0px;
+    height: 2.5em;
+    background-color: var(--Primary);
+    color: #fff;
+    font-family: 'Jersey 10', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.gameplayHeader p{
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*This is the container the fruit is placed in*/
+#fruitspace{
+    width: 100%;
+    height: 27em;
+}
+.fruit{
+    position: absolute;
+    height: 60px;
+}
+.jenkyThing{
+    background: url("../Assets/BoardTexture.png");
+    display: block;
+    position: relative;
+    margin-top: 10em;
+    z-index: 5;
+    height: 2em;
+}
+#scoremodificationlist{
+    display: block;
+    position: fixed;
+    width: 3em;
+}
+
+#scoremodificationlist p {
+    transition: all 1s;
+    opacity: 75%;
+    font-size: x-large;
+}
+#gameover hr{
+    width: 90%;
+}
+#unameinput{
+    border-radius: 6px;
+    border: none;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 1em;
+    background-color: var(--Secondary);
+    color: #fff
+}
+#scoreitems {
+    background-image: none;
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20em;
+    text-align: center;
+    z-index: 1;
+}
+
+.bubbletext{
+    font-size: 3em;
+    transition-duration: 1s;
+    font-family: 'Grandstander', Arial !important;
+    font-style:oblique;
+}
+
+#leaderboardlist{
+    list-style-type: none;
+    background-color: var(--Tertiary);
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2em;
+    overflow-y: scroll;
+    padding-left: 0px;
+    height: 20em;
+}
+.leaderboardItem{
+    width: calc(100% - 4px);
+    padding-top:5px;
+    padding-bottom: 5px;
+    border: var(--Secondary) solid 2px;
+    border-top-width: 1px;
+    color: #fff;
+}
+
+.instructionset{
+    background-color: var(--Tertiary);
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#demomantf2{
+    height: 900%;
+    width: 100%;
+    position: fixed;
+    left:0px;
+    top:0px;
+    z-index: 20;
+    background-color: #ff8623;
+    transition-duration: 300ms;
+    opacity: 0%;
+    display: none;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  .shakeitup{
+    animation: shake 2.5s;
+  }
+
+  .splat-Watermelon{
+    position: absolute;
+    width: 50px;
+  height: 50px;
+  background:
+    repeating-conic-gradient(rgb(255, 0, 0) 0 3%, #0000 0 11%),
+    repeating-conic-gradient(#0000 0 5%, rgb(255, 0, 0) 0 7%) 50% / 60% 60%,
+    repeating-conic-gradient(#0000 0 7%, rgb(255, 0, 0) 0 9%) 50% / 70% 70%,
+    repeating-conic-gradient(#0000 0 11%, rgb(255, 0, 0) 0 13%) 50% / 80% 80%,
+    radial-gradient(rgb(255, 0, 0) 22%, #0000 0),
+    #ffffff5e;
+  background-repeat: no-repeat;
+  filter: blur(20px) contrast(50);
+  transition-duration: 300ms;
+  }
+  .splat-Apple{
+    position: absolute;
+    width: 50px;
+  height: 50px;
+  background:
+    repeating-conic-gradient(rgb(255, 0, 0) 0 3%, #0000 0 11%),
+    repeating-conic-gradient(#0000 0 5%, rgb(255, 0, 0) 0 7%) 50% / 60% 60%,
+    repeating-conic-gradient(#0000 0 7%, rgb(255, 0, 0) 0 9%) 50% / 70% 70%,
+    repeating-conic-gradient(#0000 0 11%, rgb(255, 0, 0) 0 13%) 50% / 80% 80%,
+    radial-gradient(rgb(255, 0, 0) 22%, #0000 0),
+    #ffffff5e;
+  background-repeat: no-repeat;
+  filter: blur(20px) contrast(50);
+  transition-duration: 300ms;
+  }
+  .splat-Banana{
+    position: absolute;
+    width: 50px;
+  height: 50px;
+  background:
+    repeating-conic-gradient(rgb(255, 238, 0) 0 3%, #0000 0 11%),
+    repeating-conic-gradient(#0000 0 5%, rgb(255, 238, 0) 0 7%) 50% / 60% 60%,
+    repeating-conic-gradient(#0000 0 7%, rgb(255, 238, 0) 0 9%) 50% / 70% 70%,
+    repeating-conic-gradient(#0000 0 11%, rgb(255, 238, 0) 0 13%) 50% / 80% 80%,
+    radial-gradient(rgb(255, 238, 0) 22%, #0000 0),
+    #ffffff5e;
+  background-repeat: no-repeat;
+  filter: blur(20px) contrast(50);
+  transition-duration: 300ms;
+  }
+
+/*Mouse trail code from https://stackoverflow.com/questions/64159804/creating-a-disney-dust-style-cursor-trail*/
+/*Modified by me*/
+.sparkle {
+    position: fixed;
+    z-index: 6;
+    opacity: 0.5;
+    pointer-events: none;
+    background: #ffffff67;
+  }
+  
+  @keyframes fallingsparkles {
+    from {
+      transform: translateY(0);
+    }
+  
+    to {
+      transform: translateY(50px);
+    }
+  }
